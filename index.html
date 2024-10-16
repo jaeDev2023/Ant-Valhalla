@@ -3,13 +3,39 @@
     <head>
         <meta charset = 'UTF-8'>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Ant Valhalla!</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Test</h1>
-        <button onclick="testFunction()">Click dis</button>
+        <div class="container">
+            <header>
+                ANT VALHALLA
+            </header>
 
-        <script src="script.js"></script>
+            <!-- Grid section for the ant farm-->
+            <section id="grid-container">
+
+            </section>
+
+            <!-- Controls for Resources and the ant farm environment-->
+            <section id="control-panel">
+                <h2>Controls</h2>
+                <div>
+                    <label for="food-amount">Food: </label>
+                    <input type="range" id="food-amount" min="0" max="100" value="50">
+                </div>
+                <div>
+                    <label for="water-amount">Water: </label>
+                    <input type="range" id="water-amount" min="0" max="100" value="50">
+                </div>
+                <div>
+                    <label for="temp">Temperature: </label>
+                    <input type="range" id="temp" min="0" max="100" value="50">
+                </div>
+                <button id="start-btn" onclick="startSimulation()">Start</button>
+                <button id="stop-btn" onclick="stopSimulation()">Pause</button>            
+            </section>
+        </div>
     </body>
 </html>
