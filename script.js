@@ -1,3 +1,59 @@
+let simulationInterval // Global var that stores interval ID
+let running = false; // Flag to show when game is running or paused.
+
+// Start simulation
+function startSimulation() {
+    if(!running) {
+        // Start the timer. 1000 ms = 1 second
+        simulationInterval = setInterval(updateSimulation, 1000); // Runs the update sim every second
+        running = true;
+        console.log("Simulation Started");
+    }
+}
+
+// Stop simulation
+function stopSimulation() {
+    clearInterval(simulationInterval);
+    running = false;
+    console.log("Simulation pause");
+}
+
+// Function to update simulation
+function updateSimulation() {
+    updateAntPositions();
+    decreaseFoodAndWater();
+    updateTemperature();
+    console.log('Simulation updated');
+}
+
+function updateAntPositions() {
+    console.log("Ant positions updated");
+}
+
+function decreaseFoodAndWater() {
+    let foodSlider = document.getElementById('food-amount');
+    let waterSlider = document.getElementById('water-amount');
+
+    // Decrease food due to ant consumption
+    if(foodSlider.value > 0) {
+        foodSlider.value -= 1;
+    }
+
+    // Decrease water due to ant consumption
+    if(waterSlider.value > 0) {
+        waterSlider.value -= 1;
+    }
+
+    console.log("Food variables updated");
+}
+
+function updateTemperature() {
+    let tempSlider = document.getElementById('temp');
+    tempSlider.value -= 1;
+
+    console.log("Temperature updated");
+}
+
 // Function to increase slider value
 function increaseValue(id) {
     const slider = document.getElementById(id);
