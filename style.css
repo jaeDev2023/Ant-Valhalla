@@ -39,12 +39,32 @@ header {
 }
 
 .grid-item {
-    background-color: rgb(92, 193, 240);
+    background-color: rgb(208, 220, 226);
     border: 1px solid #999;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
+}
+
+/* Food zone of the grid */
+.food-zone {
+    background-color: lightgreen;
+}
+
+/* Water zone of the grid */
+.water-zone {
+    background-color: cyan;
+}
+
+/* Waste zone of the grid */
+.waste-zone {
+    background-color: brown;
+}
+
+/* Base zone of the grid */
+.base-zone {
+    background-color: black;
 }
 
 /* control panel styles */
@@ -67,6 +87,10 @@ button {
     border: none;
     cursor: pointer;
     font-size: 1rem;
+}
+
+.slider-disabled {
+    pointer-events: none;
 }
 
 button:hover {
